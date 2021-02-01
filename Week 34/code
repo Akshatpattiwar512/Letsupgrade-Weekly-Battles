@@ -1,0 +1,58 @@
+import turtle
+from tkinter import *
+
+def execute():
+    if departure.get().lower() == 'mumbai' and arrival.get().lower() == 'washington':
+        mumbai_to_washington()
+    elif departure.get().lower() == 'london' and arrival.get().lower() == 'mumbai':
+        london_to_mumbai()
+def mumbai_to_washington():
+    root.destroy()
+    screen = turtle.Screen()
+    screen.setup(1357, 628)
+    # use  image name with .gif format instead of map.gif
+    screen.bgpic('map.gif')
+    turtle.penup()
+    turtle.setposition(196, 20)
+    turtle.left(110)
+    turtle.pendown()
+    for i in range(15):
+        turtle.forward(50)
+        turtle.left(8.4)
+
+    screen.mainloop()
+
+def london_to_mumbai():
+    root.destroy()
+    screen = turtle.Screen()
+    screen.setup(1357, 628)
+    # use image name with .gif format instead of map.gif
+    screen.bgpic('map.gif')
+    turtle.penup()
+    turtle.setposition(-107, 181)
+    turtle.right(4)
+    turtle.pendown()
+    for i in range(36):
+        turtle.forward(10)
+        turtle.right(1.4)
+
+    screen.mainloop()
+
+root = Tk()
+root.title('Route Tracker')
+root.geometry('700x170')
+root.resizable(0,0)
+lab = Label(root, text = 'ROUTE TRACKER', font = 25)
+dep = Label(root, text = 'Departure:')
+departure = Entry(root)
+ar = Label(root, text = 'Arrival:')
+arrival = Entry(root)
+button = Button(root, text = 'View Route', command = execute)
+
+lab.pack()
+dep.pack()
+departure.pack()
+ar.pack()
+arrival.pack()
+button.pack()
+root.mainloop()
