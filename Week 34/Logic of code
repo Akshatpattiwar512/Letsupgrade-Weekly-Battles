@@ -1,0 +1,5 @@
+Importing turtle module and tkinter
+After that it will destory all the previous function and widgets
+Using map.gif it will draw the route 
+Then using tkinter we create a page for entering the departure and arrival.
+Finally it will view the route of airline
